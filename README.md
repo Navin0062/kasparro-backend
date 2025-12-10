@@ -1,9 +1,18 @@
 # 🚀 Kasparro Backend - Crypto Market Data ETL
 
-A robust, dockerized ETL (Extract, Transform, Load) system that ingests real-time cryptocurrency data from multiple sources, normalizes it into a unified schema, and serves it via a REST API.
+![Status](https://img.shields.io/badge/Status-Live-green)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![AWS](https://img.shields.io/badge/Deployment-AWS%20EC2-orange)
 
-**Live Demo (AWS EC2):** [http://13.61.182.138:3000/data](http://13.61.182.138:3000/data)
+A production-grade, dockerized ETL (Extract, Transform, Load) system that ingests real-time cryptocurrency data from multiple sources, normalizes it into a unified schema, and serves it via a REST API.
 
+---
+
+## 🔗 Quick Links
+
+- **🚀 Live API Demo:** [http://[YOUR_AWS_IP]:3000/data](http://[YOUR_AWS_IP]:3000/data)
+- **📊 System Stats:** [http://[YOUR_AWS_IP]:3000/stats](http://[YOUR_AWS_IP]:3000/stats)
+- **🐳 Docker Hub Image:** [https://hub.docker.com/r/[YOUR_DOCKER_USERNAME]/kasparro-backend](https://hub.docker.com/r/navin0062/kasparro-backend)
 ---
 
 ## 📌 Project Overview
