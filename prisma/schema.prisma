@@ -1,0 +1,51 @@
+// This is your Prisma schema file
+
+generator client {
+  provider      = "prisma-client-js"
+  // Generate for your local Windows AND the Docker Linux container
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Requirement P0.1: Store raw data
+model RawData {
+  id        String   @id @default(uuid())
+  source    String   // e.g., 'COINPAPRIKA', 'COINGECKO', 'CSV'
+  payload   Json     // Stores the full raw JSON response
+  ingestedAt DateTime @default(now())
+
+  @@map("raw_data")
+}
+
+// Requirement P0.1: Normalized Unified Schema
+model CryptoMarketData {
+  id           String   @id @default(uuid())
+  symbol       String   // e.g., 'BTC', 'ETH'
+  name         String
+  priceUsd     Decimal  @db.Decimal(20, 8)
+  marketCapUsd Decimal  @db.Decimal(30, 2)
+  volume24h    Decimal  @db.Decimal(30, 2)
+  
+  source       String
+  ingestedAt   DateTime @default(now())
+
+  @@index([symbol, source])
+  @@map("crypto_market_data")
+}
+
+// Requirement P1.2: Checkpoint / Job History Table
+model EtlJob {
+  id        String   @id @default(uuid())
+  source    String   // e.g., 'COINPAPRIKA'
+  status    String   // 'STARTED', 'SUCCESS', 'FAILED'
+  startTime DateTime @default(now())
+  endTime   DateTime?
+  recordsProcessed Int @default(0)
+  errorMessage String?
+
+  @@map("etl_jobs")
+}
