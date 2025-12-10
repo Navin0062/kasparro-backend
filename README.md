@@ -10,9 +10,9 @@ A production-grade, dockerized ETL (Extract, Transform, Load) system that ingest
 
 ## 🔗 Quick Links
 
-- **🚀 Live API Demo:** [http://[YOUR_AWS_IP]:3000/data](http://[YOUR_AWS_IP]:3000/data)
-- **📊 System Stats:** [http://[YOUR_AWS_IP]:3000/stats](http://[YOUR_AWS_IP]:3000/stats)
-- **🐳 Docker Hub Image:** [https://hub.docker.com/r/[YOUR_DOCKER_USERNAME]/kasparro-backend](https://hub.docker.com/r/navin0062/kasparro-backend)
+- **🚀 Live API Demo:** [http://[AWS_IP]:3000/data](http://[AWS_IP]:3000/data)
+- **📊 System Stats:** [http://[AWS_IP]:3000/stats](http://[AWS_IP]:3000/stats)
+- **🐳 Docker Hub Image:** [https://hub.docker.com/r/[DOCKER_USERNAME]/kasparro-backend](https://hub.docker.com/r/navin0062/kasparro-backend)
 ---
 
 ## 📌 Project Overview
