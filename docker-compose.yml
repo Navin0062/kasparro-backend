@@ -7,7 +7,7 @@ services:
     container_name: kasparro-backend-app
     restart: always
     environment:
-      - DATABASE_URL= ${DATABASE_URL}
+      - DATABASE_URL=${DATABASE_URL}
       - PORT= ${PORT}
     depends_on:
       db:
